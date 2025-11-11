@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(80, 80, 90, 0.2), transparent),
+    radial-gradient(circle at 80% 10%, rgba(140, 140, 170, 0.12), transparent),
+    radial-gradient(circle at 50% 100%, rgba(120, 120, 180, 0.18), transparent),
+    #050506;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 120 120'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+  opacity: 0.26;
+  z-index: 10;
+}
+
+.lens-flare {
+  position: absolute;
+  inset: auto;
+  width: 48rem;
+  height: 48rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 70%);
+  mix-blend-mode: screen;
+  filter: blur(20px);
+  opacity: 0.35;
+}
+
+.glass {
+  backdrop-filter: blur(22px) saturate(120%);
+  background: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02) 55%,
+      rgba(255, 255, 255, 0.2) 85%
+    ),
+    rgba(12, 12, 16, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
